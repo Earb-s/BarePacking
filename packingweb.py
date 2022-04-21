@@ -713,7 +713,7 @@ if st.button('Generate all combination of contour plot'):
                     # D4 = features.iloc[1,3]
                     # Beta4 = features.iloc[2,3]
                     data = prep()
-                    long= len(dataa)
+                    long= len(data)
                     
                     Final_Packing = pack2()
                     temporary_df = pd.DataFrame([M1], columns=['M1'])
