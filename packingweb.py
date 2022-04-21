@@ -341,12 +341,13 @@ for i in range (0,long, 1):
     dfb = dfb.append(temporary_df, ignore_index=True)
     
 df4 = pd.concat([df3, dfb], axis=1)
-df4 = df4.dropna(axis=0)
-df4.to_csv('PSD.csv', index=False)
+dff4 = df4.dropna(axis=0)
+#df4.to_csv('PSD.csv', index=False)
 
 def pack1():
-    data =  r'PSD.csv'
-    data = pd.read_csv(data)
+    #data =  r'PSD.csv'
+    #data = pd.read_csv(data)
+    data=dff4
     long= len(data)
     
 
@@ -443,9 +444,9 @@ Final_Packing = pack1()
 
 def compact():
     
-    data = r'PSD.csv'
-    data = pd.read_csv(data)
-    
+    #data = r'PSD.csv'
+    #data = pd.read_csv(data)
+    data = dff4
     y = data['Fraction']
     B = data['Beta']
     True_packing_initial = 0.5
@@ -561,7 +562,7 @@ def prep():
         temporary = pd.DataFrame(zip(Size, dif), columns=['Size','Fraction'])
         df = df.append(temporary, ignore_index=True)
     
-    df2 = pd.merge(df,data, how='left', on='Size', sort=False)
+    df2 = pd.merge(df,dataa, how='left', on='Size', sort=False)
     df2[df2 <0] = data.iloc[[0],[1]] 
     last_row = len(df2)-1
     df2.iloc[last_row][1] = df2.iloc[last_row][2]/100
@@ -712,7 +713,7 @@ if st.button('Generate all combination of contour plot'):
                     # D4 = features.iloc[1,3]
                     # Beta4 = features.iloc[2,3]
                     data = prep()
-                    long= len(data)
+                    long= len(dataa)
                     
                     Final_Packing = pack2()
                     temporary_df = pd.DataFrame([M1], columns=['M1'])
