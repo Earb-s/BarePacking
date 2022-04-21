@@ -68,18 +68,30 @@ if uploaded_file4 is not None:
 def user_input_features():
     
     M1 = col1.slider('Mass fraction of PSD1', min_value =0.00 , max_value = 1.00, value = 0.1, step= 0.01)
+    if M1 == 0:
+        M1 = 0.00000000001
+    else M1 = M1
     D1 = col1.number_input('Input **specific gravity** (0-1) of PSD1',value = 2.75)
     Beta1 = col1.number_input('Input **residual value ** of PSD1',value = 0.65)
     
     M2 = col2.slider(' Mass fraction of PSD2', min_value =0.00 , max_value = 1.00, value = 0.1, step= 0.01)
+    if M2 == 0:
+        M2 = 0.00000000001
+    else M2 = M2
     D2 = col2.number_input('Input **specific gravity** (0-1) of PSD2',value = 2.75)
     Beta2 = col2.number_input('Input **residual value ** of PSD2',value = 0.65)
     
     M3 = col3.slider('Mass fraction of PSD3', min_value =0.00 , max_value = 1.00, value = 0.1, step= 0.01)
+    if M3 == 0:
+        M3 = 0.00000000001
+    else M3 = M3
     D3 = col3.number_input('Input **specific gravity** (0-1) of PSD3',value = 2.75)
     Beta3 = col3.number_input('Input **residual value ** of PSD3',value = 0.65)
     
     M4 = col4.slider('Mass fraction of PSD4', min_value =0.00 , max_value = 1.00, value = 0.1, step= 0.01)
+    if M4 == 0:
+        M4 = 0.00000000001
+    else M4 = M4
     D4 = col4.number_input('Input **specific gravity** (0-1) of PSD4',value = 2.75)
     Beta4 = col4.number_input('Input **residual value ** of PSD4',value = 0.65)
    
