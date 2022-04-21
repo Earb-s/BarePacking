@@ -562,7 +562,7 @@ def prep():
         temporary = pd.DataFrame(zip(Size, dif), columns=['Size','Fraction'])
         df = df.append(temporary, ignore_index=True)
     
-    df2 = pd.merge(df,dataa, how='left', on='Size', sort=False)
+    df2 = pd.merge(df,data, how='left', on='Size', sort=False)
     df2[df2 <0] = data.iloc[[0],[1]] 
     last_row = len(df2)-1
     df2.iloc[last_row][1] = df2.iloc[last_row][2]/100
