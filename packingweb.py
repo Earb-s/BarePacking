@@ -428,14 +428,15 @@ def pack1():
 
 
     ready_for_pack = pd.concat([summary_wall, summary_loose], axis=1)
-
+    #ready_for_pack.to_csv('ready_for_pack.csv', index=False)
 
 
     beta = data['Beta']
 
     Pack = beta/(1-((1-beta)*ready_for_pack['Sum wall term in class i'])-ready_for_pack['Sum loose term in class i'])
     ready_for_pack['Packing'] = Pack
-    
+    ready_for_pack = ready_for_pack[(ready_for_pack.iloc[:,0] != 0) & (ready_for_pack.iloc[:,1] != 0)]
+    #ready_for_pack.to_csv('ready_for_pack.csv', index=False)
 
     Final_Packing = ready_for_pack['Packing'].min()
     return Final_Packing
