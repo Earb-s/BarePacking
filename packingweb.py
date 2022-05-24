@@ -508,7 +508,7 @@ col5.write('K=8 = {0:3f}'.format(True_Packing8[0]))
 col5.write('K=10 = {0:3f}'.format(True_Packing10[0]))
 col5.write('K=12 = {0:3f}'.format(True_Packing12[0]))
 col5.write('K=14 = {0:3f}'.format(True_Packing14[0]))
-col5.write('no compaction index = {0:3f}'.format(True_Packing_noindex))
+col5.write('no compaction index = {0:3f}'.format(V))
 
 col5.caption(':exclamation: **Reccomendation**   \n Dry pouring K = 4.1  \n Dry sticking with a rod K=4.5  \n Dry vibration K=4.75  \n Dry vibration + 10 Kpa compression K=9  \n Wet smooth thick past K=6.7  '
                 )
