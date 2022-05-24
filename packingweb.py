@@ -67,35 +67,19 @@ if uploaded_file4 is not None:
     
 def user_input_features():
     
-    M1 = col1.slider('Mass ratio of PSD1', min_value =0.00 , max_value = 1.00, value = 0.1, step= 0.01)
-    if M1 == 0:
-        M1 = 0.00000000001
-    else:
-        M1 = M1
+    M1 = col1.slider('Mass fraction of PSD1', min_value =0.00 , max_value = 1.00, value = 0.1, step= 0.01)
     D1 = col1.number_input('Input **specific gravity** (0-1) of PSD1',value = 2.75)
     Beta1 = col1.number_input('Input **residual value ** of PSD1',value = 0.65)
     
-    M2 = col2.slider(' Mass ratio of PSD2', min_value =0.00 , max_value = 1.00, value = 0.1, step= 0.01)
-    if M2 == 0:
-        M2 = 0.00000000001
-    else:
-        M2 = M2
+    M2 = col2.slider(' Mass fraction of PSD2', min_value =0.00 , max_value = 1.00, value = 0.1, step= 0.01)
     D2 = col2.number_input('Input **specific gravity** (0-1) of PSD2',value = 2.75)
     Beta2 = col2.number_input('Input **residual value ** of PSD2',value = 0.65)
     
-    M3 = col3.slider('Mass ratio of PSD3', min_value =0.00 , max_value = 1.00, value = 0.1, step= 0.01)
-    if M3 == 0:
-        M3 = 0.00000000001
-    else :
-        M3 = M3
+    M3 = col3.slider('Mass fraction of PSD3', min_value =0.00 , max_value = 1.00, value = 0.1, step= 0.01)
     D3 = col3.number_input('Input **specific gravity** (0-1) of PSD3',value = 2.75)
     Beta3 = col3.number_input('Input **residual value ** of PSD3',value = 0.65)
     
-    M4 = col4.slider('Mass ratio of PSD4', min_value =0.00 , max_value = 1.00, value = 0.1, step= 0.01)
-    if M4 == 0:
-        M4 = 0.00000000001
-    else:
-        M4 = M4
+    M4 = col4.slider('Mass fraction of PSD4', min_value =0.00 , max_value = 1.00, value = 0.1, step= 0.01)
     D4 = col4.number_input('Input **specific gravity** (0-1) of PSD4',value = 2.75)
     Beta4 = col4.number_input('Input **residual value ** of PSD4',value = 0.65)
    
@@ -341,13 +325,12 @@ for i in range (0,long, 1):
     dfb = dfb.append(temporary_df, ignore_index=True)
     
 df4 = pd.concat([df3, dfb], axis=1)
-dff4 = df4.dropna(axis=0)
-#df4.to_csv('PSD.csv', index=False)
+df4 = df4.dropna(axis=0)
+df4.to_csv('PSD.csv', index=False)
 
 def pack1():
-    #data =  r'PSD.csv'
-    #data = pd.read_csv(data)
-    data=dff4
+    data =  r'PSD.csv'
+    data = pd.read_csv(data)
     long= len(data)
     
 
@@ -444,9 +427,9 @@ Final_Packing = pack1()
 
 def compact():
     
-    #data = r'PSD.csv'
-    #data = pd.read_csv(data)
-    data = dff4
+    data = r'PSD.csv'
+    data = pd.read_csv(data)
+    
     y = data['Fraction']
     B = data['Beta']
     True_packing_initial = 0.5
@@ -508,7 +491,7 @@ col5.write('K=8 = {0:3f}'.format(True_Packing8[0]))
 col5.write('K=10 = {0:3f}'.format(True_Packing10[0]))
 col5.write('K=12 = {0:3f}'.format(True_Packing12[0]))
 col5.write('K=14 = {0:3f}'.format(True_Packing14[0]))
-col5.write('no compaction index = {0:3f}'.format(V))
+col5.write('no compaction index = {0:3f}'.format(Final_Packing))
 
 col5.caption(':exclamation: **Reccomendation**   \n Dry pouring K = 4.1  \n Dry sticking with a rod K=4.5  \n Dry vibration K=4.75  \n Dry vibration + 10 Kpa compression K=9  \n Wet smooth thick past K=6.7  '
                 )
@@ -762,7 +745,7 @@ if st.button('Generate all combination of contour plot'):
     dd = pd.concat([Al, Cu,Y,enthalpy ], axis=1)
     fig = px.scatter_ternary(dd, a="newM2", b="newM3", c="newM4",color="Final_Packing",size="Final_Packing", size_max=15)
 
-    col6.write('ternary plot when PSD1 has mass ration 0.1')
+    col6.write('ternary plot when PSD1 has mass ratio 0.1')
     col6.write(fig)
     
     
@@ -797,7 +780,7 @@ if st.button('Generate all combination of contour plot'):
     dd = pd.concat([Al, Cu,Y,enthalpy ], axis=1)
     fig30 = px.scatter_ternary(dd, a="newM2", b="newM3", c="newM4",color="Final_Packing",size="Final_Packing", size_max=15)
 
-    col6.write('ternary plot when PSD1 has mass ration 0.3')
+    col6.write('ternary plot when PSD1 has mass ratio 0.3')
     col6.write(fig30)
     
 ########################################################### M1=0.5
@@ -831,7 +814,7 @@ if st.button('Generate all combination of contour plot'):
     dd = pd.concat([Al, Cu,Y,enthalpy ], axis=1)
     fig50 = px.scatter_ternary(dd, a="newM2", b="newM3", c="newM4",color="Final_Packing",size="Final_Packing", size_max=15)
 
-    col6.write('ternary plot when PSD1 has mass ration 0.5')
+    col6.write('ternary plot when PSD1 has mass ratio 0.5')
     col6.write(fig50)
     
 ########################################################### M1=0.7
@@ -865,7 +848,7 @@ if st.button('Generate all combination of contour plot'):
     dd = pd.concat([Al, Cu,Y,enthalpy ], axis=1)
     fig70 = px.scatter_ternary(dd, a="newM2", b="newM3", c="newM4",color="Final_Packing",size="Final_Packing", size_max=15)
 
-    col6.write('ternary plot when PSD1 has mass ration 0.7')
+    col6.write('ternary plot when PSD1 has mass ratio 0.7')
     col6.write(fig70)
 ########################################################### M1=0.9
     M190 = result2.loc[result2['M1'] == 0.9]
@@ -898,7 +881,7 @@ if st.button('Generate all combination of contour plot'):
     dd = pd.concat([Al, Cu,Y,enthalpy ], axis=1)
     fig90 = px.scatter_ternary(dd, a="newM2", b="newM3", c="newM4",color="Final_Packing",size="Final_Packing", size_max=15)
 
-    col6.write('ternary plot when PSD1 has mass ration 0.9')
+    col6.write('ternary plot when PSD1 has mass ratio 0.9')
     col6.write(fig90)
 
   
