@@ -681,7 +681,7 @@ def pack2():
 
     Pack = beta/(1-((1-beta)*ready_for_pack['Sum wall term in class i'])-ready_for_pack['Sum loose term in class i'])
     ready_for_pack['Packing'] = Pack
-    
+    ready_for_pack = ready_for_pack[(ready_for_pack.iloc[:,0] != 0) & (ready_for_pack.iloc[:,1] != 0)]
 
     Final_Packing = ready_for_pack['Packing'].min()
     return Final_Packing
