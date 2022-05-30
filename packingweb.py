@@ -479,7 +479,7 @@ def compact():
                     'K41': [True_Packing41],
                     'K45': [True_Packing45],
                     'K475': [True_Packing475],
-                     'K67': [True_Packing6],
+                     'K67': [True_Packing67],
                      'K8': [True_Packing8],
                      'K10': [True_Packing10],
                      'K12': [True_Packing12],
