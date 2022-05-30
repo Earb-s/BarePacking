@@ -464,8 +464,8 @@ def compact():
     True_Packing45 = fsolve(Compact_,(True_packing_initial))
     K = 4.75
     True_Packing475 = fsolve(Compact_,(True_packing_initial))
-    K = 6
-    True_Packing6 = fsolve(Compact_,(True_packing_initial))
+    K = 6.7
+    True_Packing67 = fsolve(Compact_,(True_packing_initial))
     K = 8
     True_Packing8 = fsolve(Compact_,(True_packing_initial))
     K = 10
@@ -479,7 +479,7 @@ def compact():
                     'K41': [True_Packing41],
                     'K45': [True_Packing45],
                     'K475': [True_Packing475],
-                     'K6': [True_Packing6],
+                     'K67': [True_Packing6],
                      'K8': [True_Packing8],
                      'K10': [True_Packing10],
                      'K12': [True_Packing12],
@@ -492,7 +492,7 @@ True_Packing4 = True_Packing.iloc[0,0]
 True_Packing41 = True_Packing.iloc[0,1]
 True_Packing45 = True_Packing.iloc[0,2]
 True_Packing475 = True_Packing.iloc[0,3]
-True_Packing6 = True_Packing.iloc[0,4]
+True_Packing67 = True_Packing.iloc[0,4]
 True_Packing8 = True_Packing.iloc[0,5]
 True_Packing10 = True_Packing.iloc[0,6]
 True_Packing12 = True_Packing.iloc[0,7]
@@ -503,7 +503,7 @@ col5.write('packing density when  \nK=4 = {0:3f}'.format(True_Packing4[0]))
 col5.write('K=4.1 = {0:3f}'.format(True_Packing41[0]))
 col5.write('K=4.5 = {0:3f}'.format(True_Packing45[0]))
 col5.write('K=4.75 = {0:3f}'.format(True_Packing475[0]))
-col5.write('K=6 = {0:3f}'.format(True_Packing6[0]))
+col5.write('K=6.7 = {0:3f}'.format(True_Packing6[0]))
 col5.write('K=8 = {0:3f}'.format(True_Packing8[0]))
 col5.write('K=10 = {0:3f}'.format(True_Packing10[0]))
 col5.write('K=12 = {0:3f}'.format(True_Packing12[0]))
