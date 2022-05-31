@@ -293,8 +293,8 @@ figmix.add_trace(go.Scatter(x=plotx, y=ploty3,
 figmix.add_trace(go.Scatter(x=plotx, y=ploty4,
                     mode='lines',
                     name='PSD4'))
-figmix.update_xaxes(title_text="Size (mm)", type="log")
-figmix.update_yaxes(title_text="%Acculation")
+figmix.update_xaxes(title_text="Size (micron)", type="log")
+figmix.update_yaxes(title_text="Cumulative Percent")
 figmix.update_layout(height=300, width =450, margin=dict(r=0, l=0, t=0, b=0))
 col5.write(figmix)
 
