@@ -145,7 +145,7 @@ yData4 = forfit4['Acc from small'].to_numpy()
 def func(xData, x0, n):
     return 100-(100*(np.exp(-(xData/x0)**n)))
 #11111######################################################################################################
-popt1, pcov1 = curve_fit(func, xData1, yData1,p0=[10,1], maxfev=800)
+popt1, pcov1 = curve_fit(func, xData1, yData1,p0=[10,1], maxfev=5000)
 modelPredictions1 = func(xData1,popt1[[0]],popt1[[1]]) 
 absError1 = modelPredictions1 - yData1
 
@@ -156,7 +156,7 @@ Rsquared1 = 1.0 - (np.var(absError1) / np.var(yData1))
 
 
 #22222######################################################################################################
-popt2, pcov2 = curve_fit(func, xData2, yData2,maxfev=5000)
+popt2, pcov2 = curve_fit(func, xData2, yData2,p0=[10,1],maxfev=5000)
 modelPredictions2 = func(xData2,popt2[[0]],popt2[[1]]) 
 absError2 = modelPredictions2 - yData2
 
@@ -166,7 +166,7 @@ RMSE2 = np.sqrt(MSE2) # Root Mean Squared Error, RMSE
 Rsquared2 = 1.0 - (np.var(absError2) / np.var(yData2))
 
 #3333######################################################################################################
-popt3, pcov3 = curve_fit(func, xData3, yData3,maxfev=5000)
+popt3, pcov3 = curve_fit(func, xData3, yData3,p0=[10,1],maxfev=5000)
 modelPredictions3 = func(xData3,popt3[[0]],popt3[[1]]) 
 absError3 = modelPredictions3 - yData3
 
@@ -176,7 +176,7 @@ RMSE3 = np.sqrt(MSE3) # Root Mean Squared Error, RMSE
 Rsquared3 = 1.0 - (np.var(absError3) / np.var(yData3))
 
 #######################################################################################################
-popt4, pcov4 = curve_fit(func, xData4, yData4,maxfev=5000)
+popt4, pcov4 = curve_fit(func, xData4, yData4,p0=[10,1],maxfev=5000)
 modelPredictions4 = func(xData4,popt4[[0]],popt4[[1]]) 
 absError4 = modelPredictions4 - yData4
 
