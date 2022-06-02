@@ -145,7 +145,7 @@ yData4 = forfit4['Acc from small'].to_numpy()
 def func(xData, x0, n):
     return 100-(100*(np.exp(-(xData/x0)**n)))
 #11111######################################################################################################
-popt1, pcov1 = curve_fit(func, xData1, yData1,p0=[1,1], maxfev=800)
+popt1, pcov1 = curve_fit(func, xData1, yData1,p0=[10,1], maxfev=800)
 modelPredictions1 = func(xData1,popt1[[0]],popt1[[1]]) 
 absError1 = modelPredictions1 - yData1
 
